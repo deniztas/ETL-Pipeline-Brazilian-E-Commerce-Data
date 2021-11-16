@@ -1,0 +1,37 @@
+project_path: "s3://brazilian-e-commerce"
+# project_path: "D:/Projects/ETL-Pipeline-Brazilian-E-Commerce-Data"
+schema_file: "schema.yaml"
+raw_data_dir: "${project_path}/raw_data"
+output_parquet_dir: "${project_path}/output"
+
+tables:
+  olist_customers:
+    raw_data_path: ${raw_data_dir}/olist_customers_dataset.csv
+    output_path: ${output_parquet_dir}/olist_customers_dataset.parquet
+  olist_geolocation:
+    raw_data_path: ${raw_data_dir}/olist_geolocation_dataset.csv
+    output_path: ${output_parquet_dir}/olist_geolocation_dataset.parquet
+  olist_order_items:
+    raw_data_path: ${raw_data_dir}/olist_order_items_dataset.csv
+    output_path: ${output_parquet_dir}/olist_order_items_dataset.parquet
+  olist_order_payments:
+    raw_data_path: ${raw_data_dir}/olist_order_payments_dataset.csv
+    output_path: ${output_parquet_dir}/olist_order_payments_dataset.parquet
+  olist_order_reviews:
+    raw_data_path: ${raw_data_dir}/olist_order_reviews_dataset.csv
+    output_path: ${output_parquet_dir}/olist_order_reviews_dataset.parquet
+  olist_orders:
+    raw_data_path: ${raw_data_dir}/olist_orders_dataset.csv
+    output_path: ${output_parquet_dir}/olist_orders_dataset.parquet
+  olist_products:
+    raw_data_path: ${raw_data_dir}/olist_products_dataset.csv
+    output_path: ${output_parquet_dir}/olist_products_dataset.parquet
+  olist_sellers:
+    raw_data_path: ${raw_data_dir}/olist_sellers_dataset.csv
+    output_path: ${output_parquet_dir}/olist_sellers_dataset.parquet
+  product_category_name:
+    raw_data_path: ${raw_data_dir}/product_category_name_translation.csv
+    output_path: ${output_parquet_dir}/product_category_name_translation.parquet
+
+
+  

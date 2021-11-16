@@ -1,0 +1,152 @@
+tables:
+  olist_customers:
+    schema:
+      customer_id:
+        type: string
+      customer_unique_id:
+        type: string
+      customer_zip_code_prefix:
+        type: string
+      customer_city:
+        type: string
+      customer_state:
+        type: string
+    not_null_columns: 
+      - customer_id
+  olist_geolocation:
+    schema:
+      geolocation_zip_code_prefix:
+        type: string
+      geolocation_lat:
+        type: float
+      geolocation_lng:
+        type: float
+      geolocation_city:
+        type: string
+      geolocation_state:
+        type: string
+  olist_order_items:
+    schema:
+      order_id:
+        type: string
+      order_item_id:
+        type: string
+      product_id:
+        type: string
+      seller_id:
+        type: string
+      shipping_limit_date:
+        type: date
+      price:
+        type: float
+      freight_value:
+        type: float
+    not_null_columns: 
+      - shipping_limit_date
+      - price
+  olist_order_payments:
+    schema:
+      order_id:
+        type: string
+      payment_sequential:
+        type: string
+      payment_type:
+        type: string
+      payment_installments:
+        type: int
+      payment_value:
+        type: float
+    not_null_columns: 
+      - payment_installments
+      - payment_value
+  olist_order_reviews:
+    schema:
+      review_id:
+        type: string
+      order_id:
+        type: string
+      review_score:
+        type: int
+      review_comment_title:
+        type: string
+      review_comment_message:
+        type: string
+      review_creation_date:
+        type: date
+      review_answer_timestamp:
+        type: date
+    not_null_columns: 
+      - review_comment_message
+      - review_creation_date
+      - review_answer_timestamp
+  olist_orders:
+    schema:
+      order_id:
+        type: string
+      customer_id:
+        type: string
+      order_status:
+        type: string
+      order_purchase_timestamp:
+        type: date
+      order_approved_at:
+        type: date
+      order_delivered_carrier_date:
+        type: date
+      order_delivered_customer_date:
+        type: date
+      order_estimated_delivery_date:
+        type: date
+    not_null_columns: 
+      - order_status
+      - order_purchase_timestamp
+      - order_delivered_customer_date
+  olist_products:
+    schema:
+      product_id:
+        type: string
+      product_category_name:
+        type: string
+      product_name_lenght:
+        type: int
+      product_description_lenght:
+        type: int
+      product_photos_qty:
+        type: int
+      product_weight_g:
+        type: int
+      product_length_cm:
+        type: int
+      product_height_cm:
+        type: int
+      product_width_cm:
+        type: int
+    not_null_columns: 
+      - product_photos_qty
+      - product_weight_g
+      - product_height_cm
+      - product_width_cm
+  olist_sellers:
+    schema:
+      seller_id:
+        type: string
+      seller_zip_code_prefix:
+        type: string
+      seller_city:
+        type: string
+      seller_state:
+        type: string
+    not_null_columns: 
+      - seller_zip_code_prefix
+  product_category_name_translation:
+    schema:
+      product_category_name:
+        type: string
+      product_category_name_english:
+        type: string
+    not_null_columns: 
+    - product_category_name
+
+
+
+
