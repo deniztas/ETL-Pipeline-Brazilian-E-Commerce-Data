@@ -1,12 +1,12 @@
-read_write_command: "cd / && spark-submit data_pipeline/olist_customers.py"
+read_write_command: "cd / && spark-submit data_pipeline/module_runner.py"
 tables:
-  olist_customers: 
-  olist_geolocation: 
-  olist_order_items:
-  olist_order_payments:
-  olist_order_reviews:
-  olist_orders:
-  olist_products:
-  olist_sellers:
-  product_category_name_translation:
+  - olist_customers 
+  - olist_geolocation 
+  - olist_order_items
+  - olist_order_payments
+  - olist_order_reviews
+  - olist_orders
+  - olist_products
+  - olist_sellers
+  - product_category_name_translation
 email: deniztaass@gmail.com

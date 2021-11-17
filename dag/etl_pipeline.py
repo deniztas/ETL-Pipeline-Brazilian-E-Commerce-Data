@@ -19,7 +19,7 @@ config = OmegaConf.load(os.path.join(config_dir_path, "variables.yaml"))
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": datetime.datetime(2020, 1, 1),
+    "start_date": datetime.datetime(2021, 1, 1),
     "email": config.email,
     "retries": 0
 }
@@ -43,7 +43,7 @@ task_list = []
 def createDynamicETL(table_name):
     task = BashOperator(
         task_id=table_name,
-        bash_command=config.command + " --table_name {{ params.table_name }}",
+        bash_command=config.read_write_command + " --table_name {{ params.table_name }}",
         params={'table_name' : table_name},
         dag=dag
     )
@@ -52,7 +52,7 @@ def createDynamicETL(table_name):
 etl_start = DummyOperator(task_id="etl_start", dag=dag)
 completed = DummyOperator(task_id="completed", dag=dag)
 
-for table_name in config["tables"].items():
+for table_name in config["tables"]:
     task_list.append(createDynamicETL(table_name))
 
 for i in range(len(task_list)):
