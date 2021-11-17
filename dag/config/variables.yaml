@@ -1,4 +1,5 @@
 read_write_command: "cd / && spark-submit data_pipeline/module_runner.py"
+missed_orders_command: "cd / && spark-submit data_pipeline/missed_orders.py"
 tables:
   - olist_customers 
   - olist_geolocation 

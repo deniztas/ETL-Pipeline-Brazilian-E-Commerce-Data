@@ -51,9 +51,17 @@ def createDynamicETL(table_name):
 
 etl_start = DummyOperator(task_id="etl_start", dag=dag)
 completed = DummyOperator(task_id="completed", dag=dag)
+etl_end = DummyOperator(task_id="etl_end", dag=dag)
+
+missed_orders = BashOperator(
+        task_id="missed_orders",
+        bash_command=config.missed_orders_command,
+        dag=dag
+    )
 
 for table_name in config["tables"]:
     task_list.append(createDynamicETL(table_name))
 
 for i in range(len(task_list)):
     etl_start >> task_list[i] >> completed
+completed >> missed_orders >> etl_end
