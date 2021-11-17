@@ -32,6 +32,6 @@ tables:
   product_category_name:
     raw_data_path: ${raw_data_dir}/product_category_name_translation.csv
     output_path: ${output_parquet_dir}/product_category_name_translation.parquet
+missed_orders_path: "${project_path}/missed_orders/missed_orders.parquet"
 
-
-  
+ 
