@@ -19,7 +19,7 @@ This repo provides scripts to download and preprocess data for Brazilian E-Comme
 
 + This command build and docker image that containd Airflow. You will access the Airflow user interface from ```http://localhost:8080/``` after all requirements are installed. This is what the pipeline looks like.
 ![alt text](https://github.com/deniztas/ETL-Pipeline-Brazilian-E-Commerce-Data/blob/main/dag/pipeline_image.PNG)
-5. **~~Switch from off to on the DAG, click the `brazilian-e-commerce-etl` and Trigger DAG~~**
+3. **Switch from off to on the DAG, click the `brazilian-e-commerce-etl` and Trigger DAG**
 - Output folders in the brazilian-e-commerce s3 bucket output folder
 ### Pipeline Definition
 -   Each parallel task executes the `data_pipeline/module_runner.py`. This class derived from `etl_base.py`
