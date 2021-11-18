@@ -2,7 +2,7 @@
 ## About Project
 Data pipeline of Brazilian E-Commerce data
 
-This repo provides scripts to download and preprocess data for Brazilian E-Commerce data. The raw data comes from [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) of **Brazilian E-Commerce** You can find data in [brazilian-e-commerce s3 bucket](https://s3.console.aws.amazon.com/s3/home?region=eu-central-1#)
+This repo provides scripts to download and preprocess data for Brazilian E-Commerce data. The raw data comes from [here](https://www.kaggle.com/olistbr/brazilian-ecommerce) of **Brazilian E-Commerce** and kept in brazilian-e-commerce s3 bucket.
 
 ### Built With
 -  Python
